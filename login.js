@@ -1,21 +1,17 @@
 document.querySelector('#submit-btn').addEventListener('click', (e) => {
     e.preventDefault()
-    const name_input = document.querySelector('#name-input').value
+
     const email_input = document.querySelector('#email-input').value
-    const phoneNo_input = document.querySelector('#phn-input').value
     const password_input = document.querySelector('#pwd-input').value
 
-
     const user = {
-        name: name_input,
         email: email_input,
-        phoneNo: phoneNo_input,
         password: password_input
     }
 
     // AJAX CALL
     const xhr = new XMLHttpRequest()
-    const url = `http://localhost:5000/register`
+    const url = `http://localhost:5000/login`
 
     xhr.open('POST', url)
 
@@ -30,6 +26,4 @@ document.querySelector('#submit-btn').addEventListener('click', (e) => {
     }
 
     xhr.send( JSON.stringify(user) )
-
-    
-    })
+})
